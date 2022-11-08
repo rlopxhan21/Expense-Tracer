@@ -1,0 +1,17 @@
+.expenseform_input {
+  display: flex;
+  flex-direction: column;
+  margin: 10px 0;
+}
+
+.expenseform_input label {
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.submitbutton {
+  padding: 10px;
+  margin-top: 5px;
+  font-weight: bold;
+  border-radius: 5px;
+}

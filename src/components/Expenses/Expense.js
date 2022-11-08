@@ -4,10 +4,14 @@ import "./Expense.css";
 
 import Card from "../UI/Card";
 import ExpenseItem from "./ExpenseItem";
+import ExpenseFilter from "./ExpenseFilter";
 
 const Expense = (props) => {
   return (
     <Card className="expense__main">
+      <ExpenseFilter />
+      <ExpenseFilter />
+
       <ExpenseItem
         item={props.int_data[0].item}
         date={props.int_data[0].date}
