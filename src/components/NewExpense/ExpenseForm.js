@@ -25,8 +25,8 @@ const ExpenseForm = (props) => {
     const expensedata = {
       id: Math.random().toString(),
       item: enteredItem,
-      amount: enteredAmount,
-      date: enteredDate,
+      price: enteredAmount,
+      date: new Date(enteredDate),
     };
 
     props.onNewExpenseData(expensedata);
@@ -34,6 +34,10 @@ const ExpenseForm = (props) => {
     setEnteredItem("");
     setEnteredAmount("");
     setEnteredDate("");
+  };
+
+  const cancelHandler = () => {
+    props.onHideForm();
   };
 
   return (
@@ -71,6 +75,9 @@ const ExpenseForm = (props) => {
         ></input>
       </div>
       <input type="submit" value="Add Expense" className="submitbutton" />
+      <buttton type="button" className="submitbutton" onClick={cancelHandler}>
+        Cancel
+      </buttton>
     </form>
   );
 };

@@ -1,4 +1,4 @@
-import React from "react";
+import { useState } from "react";
 
 import "./App.css";
 
@@ -23,19 +23,22 @@ const INITIALIZATION_DATA = [
     item: "K-mart General Clothing",
     date: new Date(2022, 4, 6),
     price: 100,
-  }
+  },
 ];
 
-const newExpenseDataHandler = expensedata => {
-  const dataToAdd = expensedata;
-  console.log(dataToAdd);
-};
-
 const App = () => {
+  const [expenseData, setExpenseData] = useState(INITIALIZATION_DATA);
+
+  const newExpenseDataHandler = (expensedata) => {
+    console.log(expensedata);
+    setExpenseData((prevExpenses) => {
+      return [expensedata, ...prevExpenses];
+    });
+  };
   return (
     <div className="main_body">
       <NewExpense onNewExpenseData={newExpenseDataHandler} />
-      <Expense int_data={INITIALIZATION_DATA} />
+      <Expense int_data={expenseData} />
     </div>
   );
 };

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 import "./Expense.css";
 
@@ -7,26 +7,28 @@ import ExpenseItem from "./ExpenseItem";
 import ExpenseFilter from "./ExpenseFilter";
 
 const Expense = (props) => {
+  const [filteredYear, setFilteredYear] = useState("2022");
+
+  const selectedYearHandler = (selectedyear) => {
+    setFilteredYear(selectedyear);
+  };
+
   return (
     <Card className="expense__main">
-      <ExpenseFilter />
-      <ExpenseFilter />
-
-      <ExpenseItem
-        item={props.int_data[0].item}
-        date={props.int_data[0].date}
-        price={props.int_data[0].price}
+      <ExpenseFilter
+        onSelectedYear={selectedYearHandler}
+        initialYear={filteredYear}
       />
-      <ExpenseItem
-        item={props.int_data[1].item}
-        date={props.int_data[1].date}
-        price={props.int_data[1].price}
-      />
-      <ExpenseItem
-        item={props.int_data[2].item}
-        date={props.int_data[2].date}
-        price={props.int_data[2].price}
-      />
+      {props.int_data.map((expense) => {
+        return (
+          <ExpenseItem
+            key={expense.id}
+            item={expense.item}
+            date={expense.date}
+            price={expense.price}
+          />
+        );
+      })}
     </Card>
   );
 };
