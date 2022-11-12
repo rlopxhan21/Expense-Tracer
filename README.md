@@ -12,7 +12,6 @@ git clone https://github.com/rlopxhan21/Expense-Tracer.git
 After the clone is sucesful, add the project folder in IDE, then in in terminal of project folder:
 ```
 npm install
-
 ```
 
 To run:
