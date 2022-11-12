@@ -1,7 +1,17 @@
 .newexpense {
     padding: 20px 10px;
     margin: 20px auto;
-    background-color: #212529;
+    background-color: #ced4da;
     width: 800px;
-    color: #fff;
+    color: #000;
 }
+
+.submitbutton {
+    padding: 10px;
+    margin-top: 5px;
+    font-weight: bold;
+    border-radius: 5px;
+    margin-right: 10px;
+    background-color: #2b8a3e;
+    cursor: pointer;
+  }

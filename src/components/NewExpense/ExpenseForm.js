@@ -50,6 +50,7 @@ const ExpenseForm = (props) => {
           placeholder="Item to add..."
           onChange={itemHandler}
           value={enteredItem}
+          className='input-field'
           required
         ></input>
       </div>
@@ -61,6 +62,7 @@ const ExpenseForm = (props) => {
           onChange={amountHandler}
           value={enteredAmount}
           pattern="[0-9]"
+          className='input-field'
           required
         ></input>
       </div>
@@ -71,13 +73,12 @@ const ExpenseForm = (props) => {
           type="date"
           onChange={dateHandler}
           value={enteredDate}
+          className='input-field'
           required
         ></input>
       </div>
       <input type="submit" value="Add Expense" className="submitbutton" />
-      <buttton type="button" className="submitbutton" onClick={cancelHandler}>
-        Cancel
-      </buttton>
+      <input type="button" value='Cancel' className="submitbutton" onClick={cancelHandler} />
     </form>
   );
 };

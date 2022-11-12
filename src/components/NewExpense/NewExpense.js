@@ -18,7 +18,7 @@ const NewExpense = (props) => {
 
   return (
     <Card className="newexpense">
-      {!isEditing && <button onClick={formHandler}>Add New Expense</button>}
+      {!isEditing && <input type='button' value='Add New Expenses' onClick={formHandler} className='submitbutton'/>}
       {isEditing && (
         <ExpenseForm
           onNewExpenseData={props.onNewExpenseData}
